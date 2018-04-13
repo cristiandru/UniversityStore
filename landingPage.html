@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="CSS/general.css">
+    <link rel="stylesheet" type="text/css" href="CSS/landing.css">
+  </head>
+  <body>
+    <div class="mainDiv">
+      <h1 id="fireHeading">Firebase Web App</h1>
+      <textarea id="mainText" placeholder="Enter text here..." rows="10"></textarea>
+      <br />
+      <button id="submitBtn" onclick="submitClick()">Send</button>
+    </div>
+
+
+    <script src="JS/jquery-3.3.1.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAzNe8g0u5y3o7K3sp15MDhr-J_TstX8Es",
+        authDomain: "universitystore-4ecce.firebaseapp.com",
+        databaseURL: "https://universitystore-4ecce.firebaseio.com",
+        projectId: "universitystore-4ecce",
+        storageBucket: "",
+        messagingSenderId: "775581764616"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="JS/main.js"></script>
+  </body>
+</html>

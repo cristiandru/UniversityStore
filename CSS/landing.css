@@ -1,0 +1,39 @@
+body {
+  background-color: #555555;
+}
+
+.mainDiv {
+  position: relative;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 250px auto 0;
+}
+
+.mainDiv h1 {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+#mainText {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+#submitBtn {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  background-color: #169fdf;
+  border: none;
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+#submitBtn:hover {
+  cursor: pointer;
+}

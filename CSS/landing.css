@@ -2,3 +2,23 @@ body {
   background-color: #555555;
   font-family: 'Roboto', sans-serif;
 }
+
+#wrapper {
+  position: relative;
+  width: 600px;
+  height: 100vh;
+  background-color: #fff;
+}
+
+#login {
+  width: 100%;
+  height: auto;
+}
+
+#login h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 48px;
+  color: #000;
+}

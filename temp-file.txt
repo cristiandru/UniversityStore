@@ -1,0 +1,380 @@
+<body>
+    <div class="mainDiv">
+      <h1 id="fireHeading">Firebase Web App</h1>
+      <textarea id="mainText" placeholder="Enter text here..." rows="10"></textarea>
+      <br />
+      <button id="submitBtn" onclick="submitClick()">Send</button>
+    </div>
+    
+    <div id="reg">
+      <div id="title">Login</div>
+
+      <div class="input">
+        <label for="name">Username</label>
+        <input type="text" name="name" id="name">
+        <span class="spin"></span>
+      </div>
+
+      <div class="input">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <span class="spin"></span>
+      </div>
+
+      <div class="input">
+        <label for="pass">Password</label>
+        <input type="password" name="pass" id="pass">
+        <span class="spin"></span>
+      </div>
+
+      <div class="button login">
+        <button id="registerBtn" onclick="registerClick()"><span>Register</span></button>
+      </div>
+    </div>
+ </body>
+
+
+
+
+
+
+$(function() {
+  $(".input input").focus(function() {
+    $(this).parent(".input").each(function() {
+      $("label", this).css({
+        "line-height": "18px",
+        "font-size": "18px",
+        "font-weight": "100",
+        "top": "0px"
+      })
+      $(".spin", this).css({
+        "width": "100%"
+      })
+    });
+  }).blur(function() {
+    $(".spin").css({
+      "width": "0px"
+    })
+
+    if ($(this).val() == "") {
+      $(this).parent(".input").each(function() {
+        $("label", this).css({
+          "line-height": "60px",
+          "font-size": "24px",
+          "font-weight": "300",
+          "top": "10px"
+        })
+      });
+    }
+  });
+
+  $(".button").click(function(e) {
+    var pX = e.pageX,
+        pY = e.pageY,
+        oX = parseInt($(this).offset().left),
+        oY = parseInt($(this).offset().top);
+
+    $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' +(pY - oY) + 'px;"></span>')
+
+    $('.x-' + oX + '.y-' + oY + '').animate({
+      "width": "500px",
+      "height": "500px",
+      "top": "-250px",
+      "left": "-250px",
+    }, 600);
+
+    $("button", this).addClass('active');
+  })
+
+  $(".alt-2").click(function() {
+    if (!$(this).hasClass('material-button')) {
+      $(".shape").css({
+        "width": "100%",
+        "height": "100%",
+        "transform": "rotate(0deg)"
+      })
+
+      setTimeout(function() {
+        $(".overbox").css({
+            "overflow": "initial"
+        })
+      }, 600)
+
+      $(this).animate({
+        "width": "140px",
+        "height": "140px"
+      }, 500, function() {
+        $(".box").removeClass("back");
+
+        $(this).removeClass('active')
+      });
+
+      $(".overbox .title").fadeOut(300);
+      $(".overbox .input").fadeOut(300);
+      $(".overbox .button").fadeOut(300);
+
+      $(".alt-2").addClass('material-buton');
+    }
+  })
+
+  $(".material-button").click(function() {
+    if ($(this).hasClass('material-button')) {
+      setTimeout(function() {
+        $(".overbox").css({
+          "overflow": "hidden"
+        })
+
+        $(".box").addClass("back");
+      }, 200)
+
+      $(this).addClass('active').animate({
+        "width": "700px",
+        "height": "700px"
+      });
+
+      setTimeout(function() {
+        $(".shape").css({
+          "width": "50%",
+          "height": "50%",
+          "transform": "rotate(45deg)"
+        })
+
+        $(".overbox .title").fadeIn(300);
+        $(".overbox .input").fadeIn(300);
+        $(".overbox .button").fadeIn(300);
+      }, 700)
+
+      $(this).removeClass('material-button');
+    }
+
+    if ($(".alt-2").hasClass('material-buton')) {
+      $(".alt-2").removeClass('material-buton');
+      $(".alt-2").addClass('material-button');
+    }
+  });
+});
+
+
+
+
+
+.mainDiv {
+  position: relative;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 250px auto 0;
+  display: none;
+}
+
+.mainDiv h1 {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+#mainText {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+#submitBtn {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  background-color: #169fdf;
+  border: none;
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+#submitBtn:hover {
+  cursor: pointer;
+}
+
+
+#reg {
+  position: relative;
+  width: 460px;
+  background-color: #ffffff;
+  padding: 60px 50px 40px 50px;
+  border-radius: 10px;
+  margin: 150px auto 0;
+
+  transition: 400ms cubic-bezier(.4, 0, .2, 1);
+  -webkit-transition: 400ms cubic-bezier(.4, 0, .2, 1);
+  -ms-transition: 400ms cubic-bezier(.4, 0, .2, 1);
+}
+
+#reg #title {
+  width: 100%;
+  line-height: 46px;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ed2553;
+  position: relative;
+}
+
+#reg #title:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 0;
+  left: -50px;
+  background: #ed2553;
+}
+
+#reg .input,
+#reg .input label,
+#reg .input input,
+#reg .input .spin,
+#reg .button,
+#reg .button button,
+#reg .button.login button {
+  transition: 300ms cubic-bezier(.4, 0, .2, 1);
+  -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+  -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+}
+
+#reg .input,
+#reg .input label,
+#reg .input input,
+#reg .input .spin,
+#reg .button,
+#reg .button button {
+  width: 100%;
+  outline: none;
+}
+
+#reg .input,
+#reg .button {
+  margin-top: 30px;
+  height: 70px;
+}
+
+#reg .input,
+#reg .input input,
+#reg .button,
+#reg .button button {
+  position: relative;
+}
+
+#reg .input input {
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+}
+
+#reg .input input,
+#reg .input label,
+#reg .button button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 300;
+}
+
+#reg .input:before,
+#reg .input .spin {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+}
+
+#reg .input:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+#reg .input .spin {
+  background: #ed2553;
+  z-index: 4;
+  width: 0;
+}
+
+#reg .input label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  line-height: 60px;
+}
+
+#reg .button.login {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#reg .button.login button,
+#reg .button button {
+  width: 100%;
+  line-height: 64px;
+  left: 0%;
+  background-color: transparent;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  font-weight: 900;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+#reg .button.login {
+  margin-top: 30px;
+}
+
+#reg .button {
+  margin-top: 20px;
+}
+
+#reg .button button {
+  background-color: #fff;
+  color: #ed2553;
+  border: none;
+}
+
+#reg .button.login button.active {
+  border: 3px solid transparent;
+  color: #fff !important;
+}
+
+#reg .button.login button.active span {
+  opacity: 0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+}
+
+#reg .button.login button:hover {
+  color: #ED2553;
+  border-color: #ED2553;
+}
+
+#reg .button {
+  margin: 40px 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#reg .button button {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.click-efect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ED2553;
+  border-radius: 50%;
+}

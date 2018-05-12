@@ -1,11 +1,14 @@
 body {
   background-color: #555555;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('../res/images/bg.jpg');
+  background-size: cover;
+  background-position: 150px center;
 }
 
 #wrapper {
   position: relative;
-  width: 600px;
+  width: 550px;
   height: 100vh;
   background-color: #fff;
 }
@@ -13,6 +16,7 @@ body {
 #login {
   width: 100%;
   height: auto;
+  padding: 25px 46px;
 }
 
 #login h2 {
@@ -21,4 +25,178 @@ body {
   font-style: normal;
   font-size: 48px;
   color: #000;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 125px;
+  margin-bottom: 200px;
+}
+
+.input,
+.input label,
+.input input,
+.button,
+.button button,
+.button.login button {
+  transition: 300ms cubic-bezier(.4, 0, .2, 1);
+  -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+  -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+  -moz-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+  -o-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.input,
+.input label,
+.input input,
+.button button {
+  width: 100%;
+  outline: none;
+}
+
+.input {
+  margin-top: 28px;
+  height: 54px;
+  border: 2px solid #998a83;
+  border-radius: 25px;
+}
+
+.input,
+.input input,
+.button,
+.button button {
+  position: relative;
+}
+
+.input input {
+  height: 50px;
+  border: none;
+  background: transparent;
+  padding: 0 15px;
+  padding-right: 55px;
+  border-radius: 25px;
+}
+
+.input input,
+.input label,
+.button button {
+  font-family: 'OpenSans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.input label {
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+  cursor: pointer;
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+.input i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: auto;
+  height: auto;
+  font-size: 30px;
+  text-align: center;
+  color: #998a83;
+
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.butt-container {
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.button {
+  z-index: 1;
+  width: 62px;
+  height: 62px;
+}
+
+.button.login {
+  float: left;
+}
+
+.button.go-reg {
+  float: right;
+}
+
+#loginBtn {
+  background-color: #77cc49;
+}
+
+#goRegisterBtn {
+  background-color: #ff7575;
+}
+
+.button button {
+  height: 100%;
+  width: 62px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  font-size: 35px;
+  color: #fff;
+
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.button span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 62px;
+  border-radius: 31px;
+  z-index: -1;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 38px;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: default;
+
+  -webkit-transition: width 0.3s ease-in;
+  -moz-transition: width  0.3s ease-in;
+  transition: width 0.3s ease-in;
+}
+
+/* .button:hover span {
+  width: 340px;
+} */
+
+.button.login span {
+  background-color: #77cc49;
+  left: 0;
+}
+
+.button.go-reg span {
+  background-color: #ff7575;
+  right: 0;
 }

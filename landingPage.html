@@ -13,38 +13,74 @@
   </head>
   <body>
     <div id="wrapper">
-      <div id="login">
-        <h2>Member Login</h2>
+      <div id="inner">
+        <div id="rpassword"></div>
 
-        <div class="input">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email">
-          <i class="fas fa-user"></i>
-        </div>
+        <div id="login">
+          <h2 class="sec-title">Member Login</h2>
 
-        <div class="input">
-          <label for="pass">Password</label>
-          <input type="password" name="pass" id="pass">
-          <i class="fas fa-lock"></i>
-        </div>
-
-        <div class="butt-container">
-          <div class="button login">
-            <button id="loginBtn" onclick="loginClick()">
-              <i class="fas fa-check"></i>
-            </button>
-            <span>Login</span>
+          <div class="input">
+            <label for="l-email">Email</label>
+            <input type="email" name="l-email" id="l-email">
+            <i class="fas fa-user"></i>
           </div>
 
-          <div class="button go-reg">
-            <button id="goRegisterBtn" onclick="goRegisterClick()">
-              <i class="fas fa-plus"></i>
-            </button>
-            <span>Register</span>
+          <div class="input">
+            <label for="l-pass">Password</label>
+            <input type="password" name="l-pass" id="l-pass">
+            <i class="fas fa-lock"></i>
           </div>
+
+          <div class="butt-container">
+            <div class="button login">
+              <button id="loginBtn" onclick="loginClick()">
+                <i class="fas fa-check"></i>
+              </button>
+              <span>Login</span>
+            </div>
+
+            <div class="button go-reg">
+              <button id="goRegisterBtn" onclick="goRegisterClick()">
+                <i class="fas fa-plus"></i>
+              </button>
+              <span>Register</span>
+            </div>
+          </div>
+
+          <button id="goPasswordLink" onclick="goPassClick()">Fargot Password?</button>
         </div>
 
-        <button id="goPasswordLink" onclick="goPassClick()">Fargot Password?</button>
+        <div id="register">
+          <h2 class="sec-title">Create Account</h2>
+
+          <div class="input">
+            <label for="r-email">Email</label>
+            <input type="email" name="r-email" id="r-email">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <div class="input">
+            <label for="r-pass">Password</label>
+            <input type="password" name="r-pass" id="r-pass">
+            <i class="fas fa-lock"></i>
+          </div>
+
+          <div class="butt-container">
+            <div class="button go-log">
+              <button id="goLoginBtn" onclick="goLoginClick()">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <span>Back to Login</span>
+            </div>
+
+            <div class="button register">
+              <button id="registerBtn" onclick="registerClick()">
+                <i class="fas fa-check"></i>
+              </button>
+              <span>Create</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="dots-nav">

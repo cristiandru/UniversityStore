@@ -36,6 +36,13 @@ function registerClick() {
 
 
 
+function goScreenClick(x) {
+  $("#inner").css({
+    "left": "-" + x + "px"
+  });
+}
+
+
 
 $(function() {
   $(".input input").focus(function() {

@@ -196,8 +196,8 @@ h2.sec-title {
   font-family: 'OpenSans', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 38px;
-  line-height: 1.6;
+  font-size: 32px;
+  line-height: 1.9;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -216,21 +216,25 @@ h2.sec-title {
 #login .button.login span {
   background-color: #77cc49;
   left: 0;
+  padding-left: 25px;
 }
 
- #login .button.go-reg span {
+#login .button.go-reg span {
   background-color: #ff7575;
   right: 0;
+  padding-right: 43px;
 }
 
 #register .button.register span {
   background-color: #77cc49;
   right: 0;
+  padding-right: 25px;
 }
 
 #register .button.go-log span {
   background-color: #ff7575;
   left: 0;
+  padding-left: 33px;
 }
 
 #goPasswordLink {

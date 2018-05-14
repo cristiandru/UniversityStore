@@ -13,6 +13,8 @@
   </head>
   <body>
     <div id="wrapper">
+      <div class="acrylic"></div>
+
       <div id="inner">
         <div id="rpassword"></div>
 
@@ -40,14 +42,14 @@
             </div>
 
             <div class="button go-reg">
-              <button id="goRegisterBtn" onclick="goScreenClick(1100)">
+              <button id="goRegisterBtn" onclick="goScreenClick(1100, 'login', 'register')">
                 <i class="fas fa-plus"></i>
               </button>
               <span>Go To Register</span>
             </div>
           </div>
 
-          <button id="goPasswordLink" onclick="goPassClick()">Fargot Password?</button>
+          <button id="goPasswordLink" onclick="goScreenClick(0, 'login', 'password')">Fargot Password?</button>
         </div>
 
         <div id="register">
@@ -67,7 +69,7 @@
 
           <div class="butt-container">
             <div class="button go-log">
-              <button id="goLoginBtn" onclick="goScreenClick(550)">
+              <button id="goLoginBtn" onclick="goScreenClick(550, 'register', 'login')">
                 <i class="fas fa-chevron-left"></i>
               </button>
               <span>Back to Login</span>

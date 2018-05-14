@@ -36,10 +36,26 @@ function registerClick() {
 
 
 
-function goScreenClick(x) {
-  $("#inner").css({
-    "left": "-" + x + "px"
+function goScreenClick(x, currentDot, nextDot) {
+  $(".acrylic").show(100, function() {
+    $(".acrylic").animate({
+      "opacity": "0.95"
+    }, 500, function() {
+      $("#inner").css({
+        "left": "-" + x + "px"
+      });
+
+      $("#dots-nav").find(".active").removeClass(currentDot).addClass(nextDot);
+    });
   });
+
+  setTimeout(function() {
+    $(".acrylic").animate({
+      "opacity": "0"
+    }, 500, function() {
+      $(".acrylic").hide(100);
+    });
+  }, 1000);
 }
 
 

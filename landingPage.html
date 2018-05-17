@@ -8,6 +8,16 @@
     <title>University Store - Login</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="CSS/themes/light.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/metroui.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/mint.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/nest.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/relax.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/semanticui.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/sunset.css">
+
+    <link rel="stylesheet" type="text/css" href="CSS/noty.css">
     <link rel="stylesheet" type="text/css" href="CSS/general.css">
     <link rel="stylesheet" type="text/css" href="CSS/landing.css">
   </head>
@@ -16,10 +26,8 @@
       <div class="acrylic"></div>
 
       <div id="inner">
-
-        <!--Andrey-Style<fargot-password> -->
         <div id="rpassword">
-          <h2 class="sec-title">Reset Yout Password</h2>
+          <h2 class="sec-title">Reset Your Password</h2>
 
           <div class="input">
             <label for="p-email">Email</label>
@@ -28,7 +36,7 @@
           </div>
 
           <div class="input">
-            <label for="p-rmail">Reppet-Email</label>
+            <label for="p-rmail">Retype Email</label>
             <input type="email" name="p-rmail" id="p-rmail">
             <i class="fas fa-user"></i>
           </div>
@@ -81,7 +89,7 @@
             </div>
           </div>
 
-          <button id="goPasswordLink" onclick="goScreenClick(0, 'login', 'password')">Fargot Password?</button>
+          <button id="goPasswordLink" onclick="goScreenClick(0, 'login', 'password')">Forgot Password?</button>
         </div>
 
         <div id="register">
@@ -168,6 +176,7 @@
       firebase.initializeApp(config);
     </script>
 
-    <script src="JS/main.js"></script>
+    <script type="text/javascript" src="JS/noty.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
   </body>
 </html>

@@ -252,8 +252,9 @@ $(function() {
       })
     });
   });
+});
 
-//Burger transition
+// Burger transition
 $(document).ready(function(){
   $('.icon').click(function(){
       $('.icon').toggleClass('active')

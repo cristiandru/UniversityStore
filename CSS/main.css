@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+        padding: 0;
+    }
+    
+    .header{
+    width: 100%;
+    height: 150px;
+    background-color: #ff7575;
+    position: relative;
+    top: -8px;
+    right: 0px;
+    }
+    .logo{
+        background-image: url('../res/images/logo.png');
+        background-size: cover;
+        width: 185px;
+        height: 132px;
+        position: absolute;
+        left: 92px;
+        top: 11px;
+    }
+    .search-box{
+    position: absolute;
+        top: 67px;
+        left: 45%;
+        color: #ff9f9f;
+    }
+    .search-btn{
+    color: white;
+    }
+    .menu{
+    position: absolute;
+        top: 50%;
+        left: 95%;
+        transform: translate(-50%,-50%);
+        width: 80px;
+        height: 90px;
+        cursor: pointer;
+    }
+    .burger{
+        width: 50px;
+        height: 6px;
+        background: #fff;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 2px 5px rgba(0,0,0,.2);
+        transition: .5s;
+    }
+    .burger::before{
+    content: '';
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,.2);
+        transform: .5s;
+        top: -16px;
+    }
+    .burger::after{
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,.2);
+        transform: .5s;
+        top: 16px;
+    }
+    .icon.active .burger{
+    background: rgba(0,0,0,0);
+        box-shadow: 0 2px 5px rgba(0,0,0,0);
+    }
+    .icon.active .burger:before{
+    transform: rotate(45deg);
+    }
+    .icon.active .burger:after{
+    transform: rotate(135deg);
+    }
+    .content{
+        background-image: url('../res/images/BG.png');
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-size: cover;
+    }
+    .finish{
+        background-color: #00aeef;
+        height: 300px;
+        width: 100%;
+    }
+    .valahia{
+        background-image: url('../res/images/Valahia.png');
+        background-size: cover;
+        width: 100%;
+        height: 220px;
+    }
+    .finish h1{
+        text-align: center;
+        color: white;
+        font-family:     
+    }

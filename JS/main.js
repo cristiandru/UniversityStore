@@ -343,3 +343,9 @@ $(function() {
 =======
 });
 >>>>>>> 33d28e7f4acb25404d92b74a943c33f9e33f4bfb
+//Burger transition
+$(document).ready(function(){
+  $('.icon').click(function(){
+      $('.icon').toggleClass('active')
+  })
+})

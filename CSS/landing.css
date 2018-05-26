@@ -1,4 +1,5 @@
 body {
+  position: relative;
   background-color: #555555;
   font-family: 'Open Sans', sans-serif;
   background-image: url('../res/images/bg.jpg');
@@ -69,8 +70,12 @@ h2.sec-title {
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 125px;
+  margin-top: 100px;
   margin-bottom: 200px;
+}
+
+#register h2.sec-title {
+  margin-bottom: 100px;
 }
 
 .input,
@@ -166,22 +171,26 @@ h2.sec-title {
 }
 
 .button.login,
-.button.go-log {
+.button.go-log,
+.button.reset {
   float: left;
 }
 
 .button.go-reg,
-.button.register {
+.button.register,
+#rpassword .button.go-log {
   float: right;
 }
 
 #loginBtn,
-#registerBtn {
+#registerBtn,
+#resetBtn {
   background-color: #77cc49;
 }
 
 #goRegisterBtn,
-#goLoginBtn {
+#goLoginBtn,
+#p-goLoginBtn {
   background-color: #ff7575;
 }
 
@@ -226,6 +235,7 @@ h2.sec-title {
   text-align: center;
   text-transform: uppercase;
   cursor: default;
+  overflow: hidden;
 
   -webkit-transition: width 0.3s ease-in;
   -moz-transition: width  0.3s ease-in;
@@ -261,6 +271,18 @@ h2.sec-title {
   padding-left: 33px;
 }
 
+#rpassword .button.go-log span {
+  background-color: #ff7575;
+  right: 0;
+  padding-right: 33px;
+}
+
+#rpassword .button.reset span {
+  background-color: #77cc49;
+  left: 0;
+  padding-left: 15px;
+}
+
 #goPasswordLink {
   position: absolute;
   left: 50%;
@@ -283,6 +305,10 @@ h2.sec-title {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
+}
+
+#goPasswordLink:hover {
+  text-decoration: underline;
 }
 
 

@@ -1,37 +1,189 @@
-var mainText = $("#mainText");
-var submitBtn = $("#submitBtn");
-var fireHeading = $("#fireHeading");
-
-var registerBtn = $("#registerBtn");
-var emailInput = $("#email");
-var passwordInput = $("#pass");
-
 var firebaseRef = firebase.database().ref();
-var firebaseHeadingRef = firebaseRef.child("Heading");
+var Users = firebaseRef.child("Users");
 
-firebaseHeadingRef.on('value', function(datasnapshot) {
-  fireHeading.text(datasnapshot.val());
-});
+// firebaseHeadingRef.on('value', function(datasnapshot) {
+//   fireHeading.text(datasnapshot.val());
+// });
 
-function submitClick() {
-  var messageText = mainText.val();
+function loginClick() {
+  var email = $("#l-email").val();
+  var password = $("#l-pass").val();
 
-  firebaseRef.push().set(messageText);
-}
+  firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
 
-function registerClick() {
-  console.log("merge");
+    if (user.emailVerified) {
+      $("#l-email").val('');
+      $("#l-pass").val('');
 
-  var email = emailInput.val();
-  var password = passwordInput.val();
+      appendMessage("You are logged in successfully", 3500, "success");
 
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      setTimeout(function() {
+        window.location.href = "mainPage.html";
+      }, 3500);
+    } else {
+      appendMessage("Your account is not confirmed! Check the email box and access the link in the email you received.", 5000, "warning");
+    }
+
+  }).catch(function(error) {
+
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode + ", " + errorMessage);
-    // ...
+    console.log("SingIn user error: ");
+    console.log("Code: " + errorCode + ", Message: " + errorMessage);
+    console.log("");
+
+    appendMessage(errorMessage, 3500, "error");
+
   });
+}
+
+function registerClick() {
+  var email = $("#r-email").val();
+  var name = $("#r-nume").val();
+  var username = $("#r-usernume").val();
+  var password = $("#r-pass").val();
+  var passwordConfirm = $("#r-repass").val();
+  var studentNo = $("#r-stdno").val();
+
+  if (name != '' && username != '' && studentNo != '') {
+    if (password == passwordConfirm) {
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
+        
+        var userID = firebase.auth().currentUser.uid;
+
+        Users.child(userID).set({
+          username: username,
+          email: email,
+          fullName: name,
+          studentNumber: studentNo,
+          profileImg: "default"
+        }).then(function() {
+
+          appendMessage("Your data has been uploaded to the database", 4000, "info");
+
+          if (user && user.emailVerified === false) {
+            user.sendEmailVerification().then(function() {
+
+              $("#r-email").val('');
+              $("#r-nume").val('');
+              $("#r-usernume").val('');
+              $("#r-pass").val('');
+              $("#r-repass").val('');
+              $("#r-stdno").val('');
+
+              firebase.auth().signOut().then(function() {
+
+                appendMessage("Your account has been successfully created. You will receive an activation link via email.", 5000, "success");
+                goScreenClick(550, 'register', 'login');
+
+              }).catch(function(error) {
+                
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log("Initial signout error: ");
+                console.log("Code: " + errorCode + ", Message: " + errorMessage);
+                console.log("");
+
+                appendMessage(errorMessage, 3500, "info");
+
+              });
+
+            }).catch(function(error) {
+
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              console.log("Email verification error: ");
+              console.log("Code: " + errorCode + ", Message: " + errorMessage);
+              console.log("");
+
+              appendMessage(errorMessage, 3500, "warning");
+
+            });
+          }
+
+        }).catch(function(error) {
+
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log("Database upload error: ");
+          console.log("Code: " + errorCode + ", Message: " + errorMessage);
+          console.log("");
+
+          appendMessage(errorMessage, 3500, "error");
+
+        });
+
+      }).catch(function(error) {
+
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("Create user error: ");
+        console.log("Code: " + errorCode + ", Message: " + errorMessage);
+        console.log("");
+
+        appendMessage(errorMessage, 3500, "error");
+
+      });
+    } else {
+      appendMessage("Passwords do not match", 2000, "info");
+    }
+  } else {
+    if (name == '') {
+      appendMessage("The full name not entered", 2000, "info");
+    }
+    
+    if (username == '') {
+      appendMessage("Username not entered", 2000, "info");
+    }
+
+    if (studentNo == '') {
+      appendMessage("Student number not entered", 2000, "info");
+    }
+  }
+}
+
+function resetClick() {
+  var email = $("#p-email").val();
+  var emailConfirm = $("#p-rmail").val();
+
+  if (email == emailConfirm) {
+    firebase.auth().sendPasswordResetEmail(email).then(function() {
+
+      $("#p-email").val('');
+      $("#p-rmail").val('');
+      appendMessage("The operation was successful. You will receive a password reset link by email.", 4000, "success");
+      goScreenClick(550, 'password', 'login');
+
+    }).catch(function(error) {
+
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("Send verification email error: ");
+      console.log("Code: " + errorCode + ", Message: " + errorMessage);
+
+      appendMessage(errorMessage, 3500, "error");
+
+    });
+  } else {
+    appendMessage("Emails do not match", 2000, "info");
+  }
+}
+
+
+function appendMessage(message, duration, type) {
+  new Noty({
+    text: message,
+    timeout: duration,
+    type: type,
+    layout: 'topRight',
+    theme: 'metroui'
+  }).show();
 }
 
 
@@ -100,6 +252,7 @@ $(function() {
       })
     });
   });
+<<<<<<< HEAD
 
   // $(".button").click(function(e) {
   //   var pX = e.pageX,
@@ -192,3 +345,6 @@ $(document).ready(function(){
         $('.icon').toggleClass('active')
     })
 })
+=======
+});
+>>>>>>> 33d28e7f4acb25404d92b74a943c33f9e33f4bfb

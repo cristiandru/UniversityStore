@@ -8,6 +8,16 @@
     <title>University Store - Login</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="CSS/themes/light.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/metroui.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/mint.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/nest.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/relax.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/semanticui.css">
+    <link rel="stylesheet" type="text/css" href="CSS/themes/sunset.css">
+
+    <link rel="stylesheet" type="text/css" href="CSS/noty.css">
     <link rel="stylesheet" type="text/css" href="CSS/general.css">
     <link rel="stylesheet" type="text/css" href="CSS/landing.css">
   </head>
@@ -16,7 +26,37 @@
       <div class="acrylic"></div>
 
       <div id="inner">
-        <div id="rpassword"></div>
+        <div id="rpassword">
+          <h2 class="sec-title">Reset Your Password</h2>
+
+          <div class="input">
+            <label for="p-email">Email</label>
+            <input type="email" name="p-email" id="p-email">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <div class="input">
+            <label for="p-rmail">Retype Email</label>
+            <input type="email" name="p-rmail" id="p-rmail">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <div class="butt-container">
+            <div class="button reset">
+              <button id="resetBtn" onclick="resetClick()">
+                <i class="fas fa-check"></i>
+              </button>
+              <span>Reset</span>
+            </div>
+
+            <div class="button go-log">
+              <button id="p-goLoginBtn" onclick="goScreenClick(550, 'password', 'login')">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+              <span>Back to Login</span>
+            </div>
+          </div>
+        </div>
 
         <div id="login">
           <h2 class="sec-title">Member Login</h2>
@@ -49,7 +89,7 @@
             </div>
           </div>
 
-          <button id="goPasswordLink" onclick="goScreenClick(0, 'login', 'password')">Fargot Password?</button>
+          <button id="goPasswordLink" onclick="goScreenClick(0, 'login', 'password')">Forgot Password?</button>
         </div>
 
         <div id="register">
@@ -62,9 +102,33 @@
           </div>
 
           <div class="input">
+            <label for="r-nume">Full Name</label>
+            <input type="text" name="r-nume" id="r-nume">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <div class="input">
+            <label for="r-usernume">Username</label>
+            <input type="text" name="r-usernume" id="r-usernume">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <div class="input">
             <label for="r-pass">Password</label>
             <input type="password" name="r-pass" id="r-pass">
             <i class="fas fa-lock"></i>
+          </div>
+
+          <div class="input">
+            <label for="r-repass">Retype Password</label>
+            <input type="password" name="r-repass" id="r-repass">
+            <i class="fas fa-lock"></i>
+          </div>
+
+          <div class="input">
+            <label for="r-stdno">Student Number</label>
+            <input type="numeric" name="r-stdno" id="r-stdno">
+            <i class="fas fa-key"></i>
           </div>
 
           <div class="butt-container">
@@ -92,39 +156,8 @@
         <div class="dot"></div>
       </div>
     </div>
-        <!--Andrey-Style<fargot-password> -->
-          <div id="fargot-password">
-            <h2 class="sec-title">RESET YOUR PASSWORD</h2>
-            <div class="input">
-              <label for="r-email">Email</label>
-              <input type="email" name="r-email" id="r-email">
-              <i class="fas fa-user"></i>
-            </div>
-  
-            <div class="input">
-              <label for="r-pass">Reppet-Email</label>
-              <input type="password" name="r-pass" id="r-pass">
-              <i class="fas fa-lock"></i>
-            </div>
-  
-            <div class="butt-container">
-              <div class="button go-log">
-                <button id="goLoginBtn" onclick="goScreenClick(550, 'register', 'login')">
-                  <i class="fas fa-chevron-left"></i>
-                </button>
-                <span>Back to Register</span>
-              </div>
-  
-              <div class="button register">
-                <button id="registerBtn" onclick="registerClick()">
-                  <i class="fas fa-check"></i>
-                </button>
-                <span>Create</span>
-              </div>
-            </div>
-          </div>
-        </div>
-       </div>
+
+
 
     <script src="JS/jquery-3.3.1.min.js"></script>
 
@@ -143,6 +176,7 @@
       firebase.initializeApp(config);
     </script>
 
-    <script src="JS/main.js"></script>
+    <script type="text/javascript" src="JS/noty.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
   </body>
 </html>

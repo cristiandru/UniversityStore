@@ -339,12 +339,7 @@ $(function() {
   //   }
   // });
 });
-//Burger transition
-$(document).ready(function(){
-    $('.icon').click(function(){
-        $('.icon').toggleClass('active')
-    })
-})
+
 =======
 });
 >>>>>>> 33d28e7f4acb25404d92b74a943c33f9e33f4bfb

@@ -1,51 +1,183 @@
 <html>
   <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <title>University Store - Main Page</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS/noty.css">
+    <link rel="stylesheet" type="text/css" href="CSS/general.css">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
   </head>
   <body>
-    <div class="header">
-      <div class="logo"></div>
+    <div id="wrapper">
+      <header id="header">
+        <a href="/" class="logo">
+          <img src="res/images/logo-w.png" alt="BenSoft Studio" />
+          <h1>University Store</h1>
+        </a>
+  
         <div class="search-box">
-        <input class="serch-text" name="" placeorder="Type to search">
-            <a class="search-btn" href="#">
-            <i class="far fa-search"></i>
+          <input class="serch-text" name="" placeholder="Cauta...">
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+  
+        <div class="side-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </header>
+
+      <div id="content">
+        <div id="news" class="clearfix">
+          <h2 class="section-title">Noutati</h2>
+
+          <a href="#" class="news-item">
+            <span class="news-price">50 lei</span>
+            <div class="news-image"></div>
+            <div class="news-title">Carte C si C++</div>
+            <div class="news-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet quam arcu. Aenean lacus luctus, scelerisque elit, quam...</div>
+          </a>
+          <a href="#" class="news-item">
+            <span class="news-price">50 lei</span>
+            <div class="news-image"></div>
+            <div class="news-title">Carte C si C++</div>
+            <div class="news-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet quam arcu. Aenean lacus luctus, scelerisque elit, quam...</div>
+          </a>
+          <a href="#" class="news-item">
+            <span class="news-price">50 lei</span>
+            <div class="news-image"></div>
+            <div class="news-title">Carte C si C++</div>
+            <div class="news-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet quam arcu. Aenean lacus luctus, scelerisque elit, quam...</div>
+          </a>
+        </div>
+
+        <div id="cat" class="clearfix">
+          <h2 class="section-title">Categorii</h2>
+
+          <div class="cat1">
+            <h3 class="cat-title">An de studiu</h3>
+
+            <a href="#" class="cat-item">Anul 1</a>
+            <a href="#" class="cat-item">Anul 2</a>
+            <a href="#" class="cat-item">Anul 3</a>
+            <a href="#" class="cat-item">Anul 4</a>
+          </div>
+          <div class="cat2">
+            <h3 class="cat-title">Specializare</h3>
+
+            <a href="#" class="cat-item">Tehnologii si Sisteme de Telecomunicatii</a>
+            <a href="#" class="cat-item">Electronica Aplicata</a>
+            <a href="#" class="cat-item">Automatica si Informatica Aplicata</a>
+            <a href="#" class="cat-item">Energetica Industriala</a>
+            <a href="#" class="cat-item">Electrotehnica</a>
+          </div>
+        </div>
+
+        <div id="pop" class="clearfix">
+          <h2 class="section-title">Cele mai accesate</h2>
+
+          <div class="pop-item item-1">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
             </a>
-        </div>
-          <div class="menu">
-            <div class="burger"></div>
+          </div>
+          <div class="pop-item item-2">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="pop-item item-3">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="pop-item item-4">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="pop-item item-5">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="pop-item item-6">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="pop-item item-7">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="pop-item item-8">
+            <div class="item-price">80 lei</div>
+
+            <div class="item-img"></div>
+
+            <a href="" class="more-link">
+              <i class="fas fa-angle-right"></i>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="content"></div>
-      <div class="finish">
-      <div class="valahia"></div>
-          <h1>© Copyright BenSoft Studio - 2018</h1>
-      </div>
+
+      <footer id="footer">
+        <img src="res/images/logo-w.png" alt="BenSoft Studio Copyright">
+        <div id="cr">© Copyright BenSoft Studio - <span class="year">2018</span></div>
+      </footer>
+    </div>
 
 
+    <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
 
-      <script src="JS/jquery-3.3.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAzNe8g0u5y3o7K3sp15MDhr-J_TstX8Es",
+        authDomain: "universitystore-4ecce.firebaseapp.com",
+        databaseURL: "https://universitystore-4ecce.firebaseio.com",
+        projectId: "universitystore-4ecce",
+        storageBucket: "",
+        messagingSenderId: "775581764616"
+      };
+      firebase.initializeApp(config);
+    </script>
 
-      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-      <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyAzNe8g0u5y3o7K3sp15MDhr-J_TstX8Es",
-          authDomain: "universitystore-4ecce.firebaseapp.com",
-          databaseURL: "https://universitystore-4ecce.firebaseio.com",
-          projectId: "universitystore-4ecce",
-          storageBucket: "",
-          messagingSenderId: "775581764616"
-        };
-        firebase.initializeApp(config);
-      </script>
-
-      <script src="JS/main.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
   </body>
 </html>

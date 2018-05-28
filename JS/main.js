@@ -254,3 +254,24 @@ $(function() {
   });
 });
 
+$(document).ready(function() {
+  $('.side-menu-btn').click(function() {
+    $(this).css({
+      'visibility': 'hidden'
+    });
+
+    $('#side-menu').css({
+      'right': 0
+    });
+  });
+
+  $('#menu-close').click(function() {
+    $('.side-menu-btn').css({
+      'visibility': 'visible'
+    });
+
+    $('#side-menu').css({
+      'right': -300
+    });
+  });
+});

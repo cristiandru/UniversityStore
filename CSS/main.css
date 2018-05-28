@@ -4,6 +4,10 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+
+#wrapper {
+  position: relative;
+}
   
 #header {
   width: 100%;
@@ -279,8 +283,44 @@ h2.section-title {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
 }
+
+/* Imagini pentru sectiunea populare */
+#pop .pop-item.item-1 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-2 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-3 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-4 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-5 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-6 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-7 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+
+#pop .pop-item.item-8 .item-img {
+  background-image: url(); /* aici pui imagine */
+}
+/* end */
 
 #pop .pop-item .item-img:after {
   content: "";
@@ -427,4 +467,161 @@ h2.section-title {
   line-height: 1.2;
   text-align: center;
   margin-top: 20px;
+}
+
+
+#side-menu {
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  top: 0;
+  right: -300px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  padding: 25px;
+
+  -webkit-transition: right 0.3s ease-in-out;
+  -moz-transition: right 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
+  -o-transition: right 0.3s ease-in-out;
+}
+
+#menu-close {
+  position: absolute;
+  top: 11px;
+  left: 15px;
+  width: auto;
+  height: auto;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#side-menu .profile-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 60px auto 20px;
+  background-image: url(../res/images/blank-profile-image.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#side-menu .user-info h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+#side-menu .user-info > div {
+  text-align: center;
+}
+
+#side-menu .user-info #spec,
+#side-menu .user-info #an {
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+#side-menu .user-info #an {
+  padding-left: 30px;
+}
+
+#side-menu .user-info #an:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+#side-menu .menu-btns {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #ff7575;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-decoration: none;
+
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+}
+
+#side-menu #user-profile-btn {
+  margin-top: 65px;
+}
+
+#side-menu .menu-btns i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 25px;
+  opacity: 1;
+
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+}
+
+#side-menu .menu-btns span {
+  width: 250px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: transparent;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 11px 0;
+
+  -webkit-transition: color 0.3s ease-in;
+  -moz-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+  -o-transition: color 0.3s ease-in;
+}
+
+#side-menu .menu-btns:hover {
+  width: 100%;
+}
+
+#side-menu .menu-btns:hover > i {
+  opacity: 0;
+}
+
+#side-menu .menu-btns:hover > span {
+  color: #fff;
 }

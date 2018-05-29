@@ -366,3 +366,24 @@ h2.sec-title {
 #dots-nav .dot.register {
   left: 48px;
 }
+
+
+/* Media query */
+@media screen and (max-height: 700px) {
+  #login .sec-title{
+    margin-bottom: 90px;
+  }
+
+  h2.sec-title{
+    margin-bottom: 90px;
+  }
+
+  #register h2.sec-title{
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  #register .input {
+    margin-top: 15px;
+  }
+}
